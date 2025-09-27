@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rahul Kushwaha — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous">
+  <style>
+    :root{
+      --accent:#0ea5a4; /* teal */
+      --dark:#0f172a;
+      --muted:#6b7280;
+      --card:#0b1220;
+      color-scheme: dark;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071023 0%, #071122 50%, #06111a 100%);color:#e6eef6;min-height:100vh;}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#021018;box-shadow:0 6px 18px rgba(14,165,164,0.12)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .intro h1{font-size:34px;margin:0 0 8px}
+    .intro p{margin:0 0 18px;color:var(--muted);line-height:1.6}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#022;padding:12px 18px;border-radius:10px;border:0;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(14,165,164,0.12)}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .profile-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:14px;backdrop-filter:blur(6px);box-shadow:0 8px 40px rgba(2,6,23,0.6)}
+    .avatar{width:100%;height:300px;border-radius:10px;object-fit:cover;object-position:top;background: (120deg,#111827,#0b1220);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+    .profile-meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+
+    /* Sections */
+    section{margin-top:36px}
+    h2.section-title{font-size:18px;margin:0 0 12px;color:#e6f6f6}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.015),rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{border-radius:12px;overflow:hidden;background:#021226}
+    .project .thumb{height:160px;background:linear-gradient(135deg,#07203a,#051021);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+    .project .meta{padding:12px}
+
+    /* Skills */
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--muted)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#e6eef6}
+    textarea{min-height:120px}
+    .footer{margin-top:40px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+
+    /* Responsive */
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .profile-card{order:-1}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .projects{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .cards{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      .logo{width:44px;height:44px;font-size:18px}
+      .intro h1{font-size:26px}
+      .avatar{height:220px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">RK</div>
+        <div>
+          <div style="font-weight:700">Rahul Kushwaha</div>
+          <div style="font-size:12px;color:var(--muted)">Assistant Professor • Researcher • Designer</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <h1>Hi, I'm Rahul — <span style="color:var(--accent)">management researcher</span> & educator</h1>
+          <p>NET-qualified management professional with an MBA and a passion for teaching, research, and building elegant learning experiences. I create research papers, lecture material, and practical case studies.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Hire / Collaborate</a>
+            <a class="btn secondary" href="#projects">See Work</a>
+          </div>
+          <div style="margin-top:18px;color:var(--muted);font-size:14px">Based in India • Open to remote & institutional collaborations</div>
+        </div>
+
+        <aside class="profile-card">
+          <img src="Pictures/myphoto.jpg" alt="Rahul Kushwaha" class="avatar" />
+          <div class="profile-meta">
+            <div>
+              <div style="font-weight:700">Assistant Professor</div>
+              <div style="font-size:13px;color:var(--muted)">MBA • NET Qualified • PhD Aspirant</div>
+            </div>
+            <div style="text-align:right;font-size:13px;color:var(--muted)">
+              <div>📍 Bhopal, India</div>
+              <div style="margin-top:6px">📧rahulkushwaha.mgmt@gmail.com</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Who I am</h3>
+            <p>Experienced teacher and researcher focusing on organizational behaviour, HRM and management education. I design interactive lectures and practical research-driven assignments.</p>
+          </div>
+          <div class="card">
+            <h3>What I do</h3>
+            <p>Prepare demo lectures, publish research articles, create notes and guides for competitive exams like MPPSC, UGC NET, and design course material for undergraduate/postgraduate students.</p>
+          </div>
+          <div class="card">
+            <h3>My approach</h3>
+            <p>Blend academic rigor with real-world cases. Emphasis on clarity, simple visuals, and actionable insights for students and institutions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="projects">
+          <article class="project">
+            <div class="thumb">Lecture Series — HRM Essentials</div>
+            <div class="meta">
+              <h3>HRM Lecture Series</h3>
+              <p class="muted">10+ recorded lectures, slides, and assessment material used in undergraduate classes.</p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">UGC NET Management Notes</div>
+            <div class="meta">
+              <h3>UGC NET — Management Notes</h3>
+              <p class="muted">Comprehensive notes and practice questions aligned to recent NET papers.</p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">Research Paper</div>
+            <div class="meta">
+              <h3>Organizational Behaviour Study</h3>
+              <p class="muted">A mixed-methods study on employee motivation and retention in small firms.</p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">Teaching Portfolio</div>
+            <div class="meta">
+              <h3>Demo Lecture Pack</h3>
+              <p class="muted">Demo lectures & teaching plan for assistant professor interviews.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="skill-list" style="margin-top:10px">
+          <span class="skill">Research Design</span>
+          <span class="skill">Lecture Design</span>
+          <span class="skill">Case Study Writing</span>
+          <span class="skill">MS Office / PowerPoint</span>
+          <span class="skill">SPSS / R (Basics)</span>
+          <span class="skill">Academic Writing</span>
+          <span class="skill">Exam Preparation Material</span>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Get in touch</h3>
+            <p style="color:var(--muted)">Interested in collaborations, guest lectures, or research supervision? Send a message below or email me directly.</p>
+            <div style="margin-top:12px;color:var(--muted)">📧 rahulkushwaha.mgmt@gmail.com</div>
+            <div style="margin-top:6px;color:var(--muted)">📞 +91 7024277448</div>
+          </div>
+
+          <form class="card" onsubmit="event.preventDefault(); alert('Thank you — message sent (demo).');">
+            <label for="name">Name</label>
+            <input id="name" placeholder="Your full name" required />
+
+            <label for="email" style="margin-top:10px">Email</label>
+            <input id="email" placeholder="you@example.com" type="email" required />
+
+            <label for="message" style="margin-top:10px">Message</label>
+            <textarea id="message" placeholder="How can I help?" required></textarea>
+
+            <div style="margin-top:12px;display:flex;justify-content:flex-end">
+              <button class="btn" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="footer">
+        <div>© <strong>Rahul Kushwaha</strong> — All rights reserved</div>
+        <div>
+          <a href="#" style="text-decoration:none;margin-right:12px;color:var(--muted)"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" style="text-decoration:none;margin-right:12px;color:var(--muted)"><i class="fa-brands fa-github"></i></a>
+          <a href="#" style="text-decoration:none;color:var(--muted)"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
